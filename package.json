@@ -1,0 +1,33 @@
+{
+  "name": "mtga-deck-parser",
+  "version": "0.0.1",
+  "description": "Parser of Decks for MTG Arena",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "format": "rome format --indent-size 2 --indent-style space --quote-style single --write src"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/m0cchi/mtga-deck-parser.git"
+  },
+  "author": "m0cchi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m0cchi/mtga-deck-parser/issues"
+  },
+  "homepage": "https://github.com/m0cchi/mtga-deck-parser#readme",
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "jest": "^28.1.0",
+    "rome": "^0.5.0-next",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
