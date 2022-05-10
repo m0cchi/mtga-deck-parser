@@ -1,6 +1,6 @@
 {
   "name": "mtga-deck-parser",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Parser of Decks for MTG Arena",
   "main": "dist/index.js",
   "scripts": {
