@@ -4,7 +4,7 @@ function validate(parts: string[]): boolean {
   if (parts.length < 2) {
     return false;
   }
-  // @ts-ignore
+
   if (!parts[0].match(/^[0-9]+$/)) {
     return false;
   }
@@ -17,7 +17,6 @@ export function parseCard(text: string): Card {
 
   if (!validate(parts)) {
     //TODO: declear
-    console.log(parts);
     throw new Error('invalid format');
   }
 
