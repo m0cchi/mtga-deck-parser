@@ -38,3 +38,19 @@ test(
     expect(deck.side[deck.side.length - 1].qty).toBe(2);
   },
 );
+
+test(
+  'parseDeck en non-sideboard',
+  () => {
+    const deckText = readFileSync(
+      path.resolve(__dirname, '../', 'assets/testdata/deck002.txt'),
+    );
+    const deck = parseDeck(deckText.toString());
+    expect(deck.main[0].name).toBe('Plains');
+    expect(deck.main[0].qty).toBe(8);
+    expect(deck.main[deck.main.length - 1].name).toBe('Sanctuary Warden');
+    expect(deck.main[deck.main.length - 1].qty).toBe(2);
+
+    expect(deck.side.length).toBe(0);
+  },
+);
