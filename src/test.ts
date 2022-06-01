@@ -1,4 +1,4 @@
-import { parseCard, parseDeck } from './index';
+import { parseCard, parseDeck, dumpDeck } from './index';
 import { readFileSync } from 'fs';
 import * as path from 'path';
 
@@ -52,5 +52,29 @@ test(
     expect(deck.main[deck.main.length - 1].qty).toBe(2);
 
     expect(deck.side.length).toBe(0);
+  },
+);
+
+test(
+  'dumpDeck en with sideboard',
+  () => {
+    const deckText = readFileSync(
+      path.resolve(__dirname, '../', 'assets/testdata/deck001.txt'),
+    );
+    const deck = parseDeck(deckText.toString());
+    const dumpedDeck = dumpDeck(deck);
+    expect(dumpedDeck).toBe(deckText.toString());
+  },
+);
+
+test(
+  'dumpDeck en',
+  () => {
+    const deckText = readFileSync(
+      path.resolve(__dirname, '../', 'assets/testdata/deck002.txt'),
+    );
+    const deck = parseDeck(deckText.toString());
+    const dumpedDeck = dumpDeck(deck);
+    expect(dumpedDeck).toBe(deckText.toString());
   },
 );

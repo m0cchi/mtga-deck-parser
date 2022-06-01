@@ -54,3 +54,27 @@ export function parseDeck(text: string): Deck {
 
   return { main, side };
 }
+
+export function dumpDeck(deck: Deck): string {
+  let str = `Deck
+${deck.main
+    .map((x) => {
+      return x.qty + ' ' + x.name;
+    })
+    .join('\n')}
+`;
+
+  if (deck.side.length > 0) {
+    str +=
+      `
+Sideboard
+${deck.side
+        .map((x) => {
+          return x.qty + ' ' + x.name;
+        })
+        .join('\n')}
+`;
+  }
+
+  return str;
+}
